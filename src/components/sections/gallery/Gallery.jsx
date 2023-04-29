@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "./Gallery.css";
-import ImgSatu from "../gallery/5-min.jpg";
+import ImgSatu from "../../../images/gallery/5-min.jpg";
 import FadeIn from "../../../utils/Animation/FadeIn";
 
 function Gallery(props) {
