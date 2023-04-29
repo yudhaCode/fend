@@ -18,7 +18,7 @@ function Gallery(props) {
       for (let i = 1; i <= 15; i++) {
         tempImages.push({
           id: i,
-          src: `/images/gallery/${i}-min.jpg`,
+          src: `/assets/${i}-min.jpg`,
           alt: `Wedding Gallery ${i}`,
         });
       }
