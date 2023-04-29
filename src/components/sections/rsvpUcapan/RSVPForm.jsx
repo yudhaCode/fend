@@ -69,7 +69,9 @@ const RSVPForm = (props) => {
   useEffect(() => {
     const fetchAllUndangan = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/undangan");
+        const res = await axios.get(
+          "https://backend-iota-fawn.vercel.app/undangan"
+        );
         // console.log(res);
         setRsvps(res.data);
       } catch (err) {
@@ -84,8 +86,10 @@ const RSVPForm = (props) => {
     document.getElementById("myForm").reset();
 
     try {
-      await axios.post("http://localhost:5000/undangan", rsvp);
-      const res = await axios.get("http://localhost:5000/undangan");
+      await axios.post("https://backend-iota-fawn.vercel.app/undangan", rsvp);
+      const res = await axios.get(
+        "https://backend-iota-fawn.vercel.app/undangan"
+      );
       console.log("Data berhasil dikirim:", rsvp);
       // Mengosongkan form
       setRsvps(res.data);
