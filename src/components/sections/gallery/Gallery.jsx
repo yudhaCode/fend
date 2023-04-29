@@ -3,7 +3,21 @@ import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "./Gallery.css";
-import ImgSatu from "../../../images/gallery/5-min.jpg";
+import Img1 from "../../../images/gallery/1-min.jpg";
+import Img2 from "../../../images/gallery/2-min.jpg";
+import Img3 from "../../../images/gallery/3-min.jpg";
+import Img4 from "../../../images/gallery/4-min.jpg";
+import Img5 from "../../../images/gallery/5-min.jpg";
+import Img6 from "../../../images/gallery/6-min.jpg";
+import Img7 from "../../../images/gallery/7-min.jpg";
+import Img8 from "../../../images/gallery/8-min.jpg";
+import Img9 from "../../../images/gallery/9-min.jpg";
+import Img10 from "../../../images/gallery/10-min.jpg";
+import Img11 from "../../../images/gallery/11-min.jpg";
+import Img12 from "../../../images/gallery/12-min.jpg";
+import Img13 from "../../../images/gallery/13-min.jpg";
+import Img14 from "../../../images/gallery/14-min.jpg";
+import Img15 from "../../../images/gallery/15-min.jpg";
 import FadeIn from "../../../utils/Animation/FadeIn";
 
 function Gallery(props) {
@@ -19,7 +33,7 @@ function Gallery(props) {
       for (let i = 1; i <= 15; i++) {
         tempImages.push({
           id: i,
-          src: ImgSatu,
+          src: `Img${i}`,
           alt: `Wedding Gallery ${i}`,
         });
       }
