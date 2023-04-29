@@ -18,7 +18,7 @@ function Gallery(props) {
       for (let i = 1; i <= 15; i++) {
         tempImages.push({
           id: i,
-          src: `/assets/${i}-min.jpg`,
+          src: `./src/images/gallery/${i}-min.jpg`,
           alt: `Wedding Gallery ${i}`,
         });
       }
@@ -27,6 +27,8 @@ function Gallery(props) {
 
     loadImage();
   }, []);
+
+  console.log(images);
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
