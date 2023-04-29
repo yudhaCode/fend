@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/blur.css";
 import "./Gallery.css";
+import ImgSatu from "../../../images/gallery/5-min.jpg";
 import FadeIn from "../../../utils/Animation/FadeIn";
 
 function Gallery(props) {
@@ -18,7 +19,7 @@ function Gallery(props) {
       for (let i = 1; i <= 15; i++) {
         tempImages.push({
           id: i,
-          src: `./src/images/gallery/${i}-min.jpg`,
+          src: ImgSatu,
           alt: `Wedding Gallery ${i}`,
         });
       }
