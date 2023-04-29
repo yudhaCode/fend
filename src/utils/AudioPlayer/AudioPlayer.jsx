@@ -3,6 +3,7 @@ import "./AudioPlayer.css"; // Import file CSS untuk tampilan
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlay } from "@fortawesome/free-solid-svg-icons";
 import { faPause } from "@fortawesome/free-solid-svg-icons";
+import Bgn from "../../audio/bgn.mp3";
 
 const AudioPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -28,12 +29,7 @@ const AudioPlayer = () => {
 
   return (
     <div className="audio-player">
-      <audio
-        ref={audioRef}
-        src=".../../../src/audio/bgn.mp3"
-        autoPlay
-        preload="metadata"
-      />{" "}
+      <audio ref={audioRef} src={Bgn} autoPlay preload="metadata" />{" "}
       {/* Menambahkan atribut autoPlay untuk memainkan audio secara otomatis */}
       <div className="audio-player-controls">
         <button onClick={togglePlay}>
