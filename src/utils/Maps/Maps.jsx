@@ -2,26 +2,30 @@ import React, { useEffect, useState } from "react";
 import "./Maps.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapLocation } from "@fortawesome/free-solid-svg-icons";
-import dotenv from "dotenv";
+import axios from "axios";
 
 function Maps() {
   const locationIcon = <FontAwesomeIcon icon={faMapLocation} />;
-  const [api_key, setApiKey] = useState("");
+  const [apiKey, setApiKey] = useState("");
 
   const handleClick = () => {
     window.open(
-      `https://www.google.com/maps/embed/v1/place?q=Gedung+As+Sakinah+Jl.+KH+Abdullah+Bin+Nuh+No.48,+Sawah+Gede,+Kec.+Cianjur,+Kabupaten+Cianjur,+Jawa+Barat+43212&key=${api_key}`
+      `https://www.google.com/maps/embed/v1/place?q=Gedung+As+Sakinah+Jl.+KH+Abdullah+Bin+Nuh+No.48,+Sawah+Gede,+Kec.+Cianjur,+Kabupaten+Cianjur,+Jawa+Barat+43212&key=${apiKey}`
     );
   };
 
   useEffect(() => {
-    const getApiKey = async () => {
-      const response = await fetch("/maps"); //kirim permintaan ke server
-      const data = await response.json();
-      setApiKey(data.api_key); //simpan API key di state
-    };
-    getApiKey();
+    axios
+      .get("http://localhost:5000/maps")
+      .then((response) => {
+        setApiKey(response.data.api_key);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }, []);
+
+  console.log(apiKey);
 
   return (
     <div className="maps-wrapper">
@@ -29,7 +33,7 @@ function Maps() {
         title="Gedung As Sakinah"
         className="maps"
         frameBorder="0"
-        src={`https://www.google.com/maps/embed/v1/place?q=Gedung+As+Sakinah+Jl.+KH+Abdullah+Bin+Nuh+No.48,+Sawah+Gede,+Kec.+Cianjur,+Kabupaten+Cianjur,+Jawa+Barat+43212&key=${api_key}`}
+        src={`https://www.google.com/maps/embed/v1/place?q=Gedung+As+Sakinah+Jl.+KH+Abdullah+Bin+Nuh+No.48,+Sawah+Gede,+Kec.+Cianjur,+Kabupaten+Cianjur,+Jawa+Barat+43212&key=${apiKey}`}
         allowFullScreen
       ></iframe>
       <h3 className="maps-title">Gedung Assakinah</h3>
