@@ -51,7 +51,7 @@ function Container() {
     setSelectedId({ ...selectedId, [id]: true });
   };
 
-  console.log(sampulOpen);
+  // console.log(sampulOpen);
 
   //
 

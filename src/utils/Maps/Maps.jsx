@@ -25,7 +25,7 @@ function Maps() {
       });
   }, []);
 
-  console.log(apiKey);
+  // console.log(apiKey);
 
   return (
     <div className="maps-wrapper">
