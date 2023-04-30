@@ -78,34 +78,13 @@ function Gallery(props) {
     setShowModal(true);
   };
   //
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setActive(props.selectedId);
   }, [props.selectedId]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 280);
-    };
-
-    const handleOrientationChange = () => {
-      setIsMobile(window.matchMedia("(orientation: portrait)").matches);
-    };
-
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("orientationchange", handleOrientationChange);
-    handleResize();
-    handleOrientationChange();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("orientationchange", handleOrientationChange);
-    };
-  }, []);
-
   return (
-    <FadeIn active={active || !isMobile}>
+    <FadeIn active={active}>
       <div
         id="gallery"
         className={

@@ -102,34 +102,8 @@ const RSVPForm = (props) => {
     }
   };
 
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setActive(props.selectedId);
-  }, [props.selectedId]);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 280);
-    };
-
-    const handleOrientationChange = () => {
-      setIsMobile(window.matchMedia("(orientation: portrait)").matches);
-    };
-
-    window.addEventListener("resize", handleResize);
-    window.addEventListener("orientationchange", handleOrientationChange);
-    handleResize();
-    handleOrientationChange();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-      window.removeEventListener("orientationchange", handleOrientationChange);
-    };
-  }, []);
-
   return (
-    <FadeIn active={active || !isMobile}>
+    <FadeIn active={active}>
       <div
         id="rsvp"
         className={
@@ -275,8 +249,8 @@ const RSVPForm = (props) => {
           </form>
           <h2 className="h2-rsvp mt-3rem">Kiriman Ucapan :</h2>
 
-          {rsvps.map((rsvp) => (
-            <div>
+          {rsvps.map((rsvp, index) => (
+            <div key={index}>
               <ul className="list-ucapan">
                 <li>
                   <p className="list-ucapan-text">{rsvp.nama}</p>
