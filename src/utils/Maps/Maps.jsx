@@ -16,7 +16,7 @@ function Maps() {
 
   useEffect(() => {
     axios
-      .get("https://backend-ovqse45dg-yudhasaurus-gmailcom.vercel.app/maps")
+      .get("https://backend-iota-fawn.vercel.app/maps")
       .then((response) => {
         setApiKey(response.data.api_key);
       })
