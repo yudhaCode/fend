@@ -36,6 +36,7 @@ function Gallery(props) {
     Img12,
     Img13,
     Img14,
+    Img15,
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

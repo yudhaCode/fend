@@ -2,15 +2,26 @@ import React from "react";
 import "./Maps.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapLocation } from "@fortawesome/free-solid-svg-icons";
+import dotenv from "dotenv";
 
 function Maps() {
   const locationIcon = <FontAwesomeIcon icon={faMapLocation} />;
+  const [api_key, setApiKey] = useState("");
 
   const handleClick = () => {
     window.open(
-      `https://www.google.com/maps/search/?api=1&query=Gedung+As+Sakinah+Jl.+KH+Abdullah+Bin+Nuh+No.48,+Sawah+Gede,+Kec.+Cianjur,+Kabupaten+Cianjur,+Jawa+Barat+43212`
+      `https://www.google.com/maps/embed/v1/place?q=Gedung+As+Sakinah+Jl.+KH+Abdullah+Bin+Nuh+No.48,+Sawah+Gede,+Kec.+Cianjur,+Kabupaten+Cianjur,+Jawa+Barat+43212&key=${api_key}`
     );
   };
+
+  useEffect(() => {
+    const getApiKey = async () => {
+      const response = await fetch("/maps"); //kirim permintaan ke server
+      const data = await response.json();
+      setApiKey(data.api_key); //simpan API key di state
+    };
+    getApiKey();
+  }, []);
 
   return (
     <div className="maps-wrapper">
@@ -18,7 +29,7 @@ function Maps() {
         title="Gedung As Sakinah"
         className="maps"
         frameBorder="0"
-        src={`https://www.google.com/maps/embed/v1/place?q=Gedung+As+Sakinah+Jl.+KH+Abdullah+Bin+Nuh+No.48,+Sawah+Gede,+Kec.+Cianjur,+Kabupaten+Cianjur,+Jawa+Barat+43212&key=AIzaSyAZVVekVvlZF_njx_mtH9YgM8lozU6ITTo`}
+        src={`https://www.google.com/maps/embed/v1/place?q=Gedung+As+Sakinah+Jl.+KH+Abdullah+Bin+Nuh+No.48,+Sawah+Gede,+Kec.+Cianjur,+Kabupaten+Cianjur,+Jawa+Barat+43212&key=${api_key}`}
         allowFullScreen
       ></iframe>
       <h3 className="maps-title">Gedung Assakinah</h3>

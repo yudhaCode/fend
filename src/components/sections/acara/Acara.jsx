@@ -15,6 +15,11 @@ function Acara(props) {
   // console.log(props);
 
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    setActive(props.selectedId);
+  }, [props.selectedId]);
+  //
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
