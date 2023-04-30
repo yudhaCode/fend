@@ -24,7 +24,6 @@ function Penutup(props) {
     props.closeModalTrue(true);
   };
   //
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setActive(props.selectedId);

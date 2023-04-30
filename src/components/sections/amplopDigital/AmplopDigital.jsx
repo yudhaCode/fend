@@ -17,9 +17,6 @@ function AmplopDigital(props) {
   return (
     <div className="modal-overlay">
       <div className="modal-content">
-        <button className="modal-close" onClick={closeModal}>
-          X
-        </button>
         <ul className="modal-tabs">
           <li>
             <button
@@ -40,6 +37,11 @@ function AmplopDigital(props) {
             >
               <img src={logoHadiah} alt={logoHadiah} />
               {/* tab2 */}
+            </button>
+          </li>
+          <li className="modal-close-li">
+            <button className="modal-close" onClick={closeModal}>
+              X
             </button>
           </li>
         </ul>

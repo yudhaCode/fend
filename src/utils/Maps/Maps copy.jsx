@@ -3,6 +3,7 @@ import "./Maps.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMapLocation } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
+import maps from "../../../src/images/maps.png";
 
 function Maps() {
   const locationIcon = <FontAwesomeIcon icon={faMapLocation} />;
@@ -29,13 +30,8 @@ function Maps() {
 
   return (
     <div className="maps-wrapper">
-      <iframe
-        title="Gedung As Sakinah"
-        className="maps"
-        frameBorder="0"
-        src={`https://www.google.com/maps/embed/v1/place?q=Gedung+As+Sakinah+Jl.+KH+Abdullah+Bin+Nuh+No.48,+Sawah+Gede,+Kec.+Cianjur,+Kabupaten+Cianjur,+Jawa+Barat+43212&key=${apiKey}`}
-        allowFullScreen
-      ></iframe>
+      <img className="maps" src={maps} alt="maps" />
+
       <h3 className="maps-title">Gedung Assakinah</h3>
       <p className="maps-location-desc">
         Jl. KH Abdullah Bin Nuh No.48, Sawah Gede, Kec. Cianjur, Kabupaten
