@@ -102,6 +102,10 @@ const RSVPForm = (props) => {
     }
   };
 
+  useEffect(() => {
+    setActive(props.selectedId);
+  }, [props.selectedId]);
+
   return (
     <FadeIn active={active}>
       <div

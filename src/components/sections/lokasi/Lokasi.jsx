@@ -6,7 +6,6 @@ import "./Lokasi.css";
 
 function Lokasi(props) {
   const [active, setActive] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setActive(props.selectedId);
