@@ -21,23 +21,7 @@ import Img15 from "../../../images/gallery/15-min.jpg";
 import FadeIn from "../../../utils/Animation/FadeIn";
 
 function Gallery(props) {
-  const imagesArr = [
-    Img1,
-    Img2,
-    Img3,
-    Img4,
-    Img5,
-    Img6,
-    Img7,
-    Img8,
-    Img9,
-    Img10,
-    Img11,
-    Img12,
-    Img13,
-    Img14,
-    Img15,
-  ];
+  const imagesArr = [Img1, Img2, Img3, Img4, Img5, Img6];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
@@ -48,7 +32,7 @@ function Gallery(props) {
     // Fungsi untuk memuat gambar secara dinamis
     const loadImage = () => {
       const tempImages = [];
-      for (let i = 1; i <= 15; i++) {
+      for (let i = 1; i <= 6; i++) {
         tempImages.push({
           id: i,
           src: imagesArr[i - 1],
